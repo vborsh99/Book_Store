@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ book.title }}</h2>
+    <p>Author: {{ book.author }}</p>
+    <p>Genre: {{ book.genre }}</p>
+    <p>Published: {{ book.published_date }}</p>
+    <p>{{ book.overview }}</p>
+    <a href="{% url 'books' %}">Back to all books</a>
+{% endblock %}
