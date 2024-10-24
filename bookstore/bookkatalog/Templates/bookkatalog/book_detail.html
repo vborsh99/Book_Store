@@ -1,10 +1,18 @@
-{% extends 'base.html' %}
+<h1>{{ book.title }}</h1>
+<p>{{ book.description }}</p>
 
-{% block content %}
-    <h2>{{ book.title }}</h2>
-    <p>Author: {{ book.author }}</p>
-    <p>Genre: {{ book.genre }}</p>
-    <p>Published: {{ book.published_date }}</p>
-    <p>{{ book.overview }}</p>
-    <a href="{% url 'books' %}">Back to all books</a>
-{% endblock %}
+<h2>Reviews</h2>
+<ul>
+    {% for review in reviews %}
+        <li>{{ review.review }}</li>
+    {% empty %}
+        <li>No reviews yet.</li>
+    {% endfor %}
+</ul>
+
+<h2>Add a Review</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Отображаем форму -->
+    <button type="submit">Submit</button>
+</form>

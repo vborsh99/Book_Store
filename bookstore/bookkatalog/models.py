@@ -1,4 +1,6 @@
 from django.db import models
+from django.template.context_processors import request
+
 
 class Author(models.Model):
     name = models.CharField(max_length=50, null=True)
@@ -11,10 +13,18 @@ class Book(models.Model):
     overview = models.TextField()
     price = models.FloatField()
     genre = models.CharField(max_length=50, null=True)
-    published_date = models.DateField(null=True, blank=True)
     author = models.ForeignKey(Author, on_delete=models.PROTECT, null=True)
 
+    def __str__(self):
+        return f'{self.title}'
 
+
+class Review(models.Model):
+    review = models.TextField()
+    book = models.ForeignKey('Book', on_delete=models.PROTECT)
+
+    def __str__(self):
+        return f'{self.book}'
 
 
 
