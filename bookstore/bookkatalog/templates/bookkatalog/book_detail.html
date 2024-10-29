@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>{{ book.title }}</h1>
-<p>{{ book.author }}</p>
+<img src='{{ book.image.url }}' class="det_img">
+<p> by {{ book.author }}</p>
 <p>{{ book.genre }}</p>
 <p>{{ book.overview }}</p>
 

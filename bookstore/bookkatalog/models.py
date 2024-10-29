@@ -14,6 +14,7 @@ class Book(models.Model):
     price = models.FloatField()
     genre = models.CharField(max_length=50, null=True)
     author = models.ForeignKey(Author, on_delete=models.PROTECT, null=True)
+    image = models.FileField(upload_to='book_img', null=True)
 
     def __str__(self):
         return f'{self.title}'

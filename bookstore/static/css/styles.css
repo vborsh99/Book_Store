@@ -36,3 +36,8 @@ footer {
     bottom: 0;
     margin-top: auto;
 }
+
+.det_img{
+    width: 200px;
+    height: 300px;
+}
