@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Books</h2>
-    <ul>
+        <div class="books-section">
         {% for book in books %}
-            <li>
-                <a href="{% url 'book_detail' book.id %}">{{ book.title }}</a> by {{ book.author }}
-            </li>
-        {% empty %}
-            <p>No books available.</p>
+            <div class="book-card">
+                <img src="{{ book.image.url }}" alt="Frankenstein">
+                <h3><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a></h3>
+                <p>by {{ book.author }}</p>
+            </div>
         {% endfor %}
-    </ul>
+        </div>
+
 {% endblock %}

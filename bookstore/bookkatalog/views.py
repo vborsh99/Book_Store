@@ -20,7 +20,7 @@ class BooksView(ListView):
 
 
 class BookDetail(FormView):
-    form_class = ReviewForm  # Используем форму для отзыва
+    form_class = ReviewForm
     template_name = 'bookkatalog/book_detail.html'
     success_url = '/review_done'
 
@@ -35,6 +35,7 @@ class BookDetail(FormView):
         book = self.get_book()
         context['book'] = self.get_book()
         context['reviews'] = Review.objects.filter(book=book)
+        context['reviews'] = context['reviews'][:3]
         return context
 
     def get_book(self):

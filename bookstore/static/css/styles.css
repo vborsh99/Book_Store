@@ -1,11 +1,30 @@
-body {
-    font-family: "Playfair Display", serif;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    min-height: 100vh; /* Высота равная 100% высоты экрана */
     display: flex;
     flex-direction: column;
-    background-color: #f5f5f5;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #6b4e23; /* Darker color to match a bookish theme */
+    text-align: center;
+    margin-top: 20px;
+}
+a {
+    color: #6b4e23; /* Darker color for contrast */
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ffb347; /* Lighter color on hover */
+    text-decoration: underline;
+}
+
+.book-card, nav a {
+    transition: all 0.3s ease;
 }
 
 header {
@@ -18,9 +37,26 @@ header {
     font-style: italic;
 }
 
+nav {
+    background-color: transparent; /* Transparent background */
+    padding: 1rem;
+    border-bottom: 2px solid #6b4e23; /* Adds a bottom border */
+    text-align: center;
+}
+
 nav a {
-    margin: 0 10px;
+    color: #6b4e23; /* Matches the theme color */
     text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #ffb347; /* Adds a background on hover */
+    color: #fff;
 }
 
 main {
@@ -29,15 +65,166 @@ main {
 }
 
 footer {
-    background-color: #F5F5DC;
+    background-color: #f2f2e9; /* Light background to match theme */
     text-align: center;
     padding: 1rem;
-    width: 100%;
-    bottom: 0;
-    margin-top: auto;
+    font-size: 0.9rem;
+    color: #6b4e23;
+    border-top: 1px solid #ddd;
 }
 
 .det_img{
     width: 200px;
     height: 300px;
+}
+
+.books-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.book-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.book-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.book-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.book-card a {
+    color: #6b4e23;
+    text-decoration: none;
+}
+
+.book-card a:hover {
+    text-decoration: underline;
+}
+
+.home-page h2 {
+    color: #6b4e23;
+}
+
+.home-page p {
+    font-style: italic;
+    color: #333;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+.book-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the book title */
+.book-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #6b4e23;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Book information section */
+.book-info {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.book-image {
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-author, .book-genre, .book-overview {
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif;
+    color: #333;
+}
+
+/* Reviews section */
+.reviews-title {
+    font-size: 1.5rem;
+    color: #6b4e23;
+    margin-top: 30px;
+}
+
+.reviews-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 20px 0;
+}
+
+.review-item {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.no-reviews {
+    color: #888;
+    font-style: italic;
+}
+
+/* Add Review Form */
+.add-review-title {
+    font-size: 1.5rem;
+    color: #6b4e23;
+    margin-top: 20px;
+}
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.submit-button {
+    background-color: #6b4e23;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #ffb347;
 }
