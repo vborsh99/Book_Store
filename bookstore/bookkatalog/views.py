@@ -1,12 +1,23 @@
-from lib2to3.fixes.fix_input import context
-
-from django.shortcuts import render, get_object_or_404, redirect
 from .models import Book, Review
 from .forms import ReviewForm
-from django.views import View
 from django.views.generic.base import TemplateView
 from django.views.generic import ListView
 from django.views.generic.edit import FormView
+from .forms import RegisterForm
+from django.shortcuts import render, redirect
+from django.contrib.auth import login
+
+
+def register(request):
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect("home")
+    else:
+        form = RegisterForm()
+    return render(request, "bookkatalog/register.html", {"form": form})
 
 
 class HomeView(TemplateView):

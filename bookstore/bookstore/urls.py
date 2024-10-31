@@ -22,5 +22,6 @@ from debug_toolbar.toolbar import debug_toolbar_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('bookkatalog.urls'))
+    path('', include('bookkatalog.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ] + debug_toolbar_urls() + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
